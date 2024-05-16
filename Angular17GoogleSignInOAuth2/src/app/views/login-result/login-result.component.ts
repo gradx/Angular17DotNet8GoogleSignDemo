@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { AsyncPipe, JsonPipe } from '@angular/common';
-import { Router } from '@angular/router';
 import { AuthStoreProvider } from '../../signal-stores/auth-store';
 import { DataService } from '../../services/data.service';
 import { Observable } from 'rxjs';
@@ -19,7 +18,7 @@ export class LoginResultComponent {
 
   message$: Observable<string>
 
-  constructor(private router: Router, private authStoreProvider: AuthStoreProvider, private dataService: DataService) {
+  constructor(private authStoreProvider: AuthStoreProvider, private dataService: DataService) {
     this.authProvider = authStoreProvider;
     this.data = dataService;
     this.message$ = this.dataService.getMessage();

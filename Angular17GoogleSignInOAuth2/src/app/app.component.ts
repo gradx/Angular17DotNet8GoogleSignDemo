@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { GoogleSigninComponent } from './views/google-signin/google-signin.component';
 import { AuthStoreProvider }  from './signal-stores/auth-store';
 import { HeaderComponent } from './views/header/header.component';
 import { DataService } from './services/data.service';

@@ -22,7 +22,7 @@ function decodeJwtResponse(token: string) {
 }
 
 window.handleOauthResponse = (response: any) => { 
-  window.dataService.validateToken(response.credential).subscribe({
+  window.dataService.validateToken(JSON.stringify(response.credential)).subscribe({
     next: response => {
       let result = response as string;
       let responsePayload = decodeJwtResponse(result);

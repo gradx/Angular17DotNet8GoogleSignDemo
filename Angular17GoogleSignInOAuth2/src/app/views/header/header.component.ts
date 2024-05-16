@@ -20,7 +20,5 @@ export class HeaderComponent {
   manual() {
     const user = this.authProvider.store.user();
     this.authProvider.store.update(user!);
-
-    //this.router.navigate(['/login']);
   }
 }

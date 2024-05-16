@@ -12,7 +12,7 @@ import { AuthStoreProvider } from '../signal-stores/auth-store';
 
 
 @Injectable()
-export class SampleInterceptor implements HttpInterceptor {
+export class BearerInterceptor implements HttpInterceptor {
     constructor(
         private injector: Injector,
         private router: Router

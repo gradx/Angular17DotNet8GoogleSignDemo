@@ -2,7 +2,7 @@ import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideHttpClient, withInterceptorsFromDi, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { routes } from './app.routes';
-import { SampleInterceptor } from './interceptors/sample-interceptor';
+import { BearerInterceptor } from './interceptors/bearer-interceptor';
 
 
 export const appConfig: ApplicationConfig = {
@@ -11,7 +11,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withInterceptorsFromDi()),  
     {
         provide: HTTP_INTERCEPTORS,
-        useClass: SampleInterceptor,
+        useClass: BearerInterceptor,
         multi:true
     }
   ]
