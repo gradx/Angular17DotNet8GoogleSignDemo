@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-google-signin',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './google-signin.component.less'
 })
 export class GoogleSigninComponent {
+  env: any;
 
+  constructor() {
+    this.env = environment;
+  }
 }

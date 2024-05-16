@@ -10,7 +10,7 @@ type AuthState = {
 };
 
 const initialState: AuthState = {
-  user: JSON.parse(localStorage.getItem(AUTH_USER_TOKEN) || '{}'),
+  user: JSON.parse(sessionStorage.getItem(AUTH_USER_TOKEN) || '{}'),
   updated: JSON.stringify(new Date()),
 };
 
@@ -18,7 +18,7 @@ export const AuthStore = signalStore(
   withState(initialState),
   withMethods((store) => ({
     update(user: AuthUser): void {
-      localStorage.setItem(AUTH_USER_TOKEN, JSON.stringify(user));
+      sessionStorage.setItem(AUTH_USER_TOKEN, JSON.stringify(user));
 
       patchState(store, 
         { user : user },
