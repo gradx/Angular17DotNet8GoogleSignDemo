@@ -4,10 +4,11 @@ import { AppComponent } from './app/app.component';
 import { AuthStoreProvider } from './app/signal-stores/auth-store';
 import { DataService } from './app/services/data.service';
 
+
 declare global {
   interface Window {
-    handleOauthResponse: (response: any) => void;
-    authStoreProvider: AuthStoreProvider;
+    handleResponse: (response: any) => void;
+    authProvider: AuthStoreProvider;
     dataService: DataService;
   }
 }
@@ -21,22 +22,23 @@ function decodeJwtResponse(token: string) {
   return JSON.parse(jsonPayload);
 }
 
-window.handleOauthResponse = (response: any) => { 
+window.handleResponse = (response: any) => { 
   window.dataService.validateToken(JSON.stringify(response.credential)).subscribe({
     next: response => {
       let result = response as string;
       let responsePayload = decodeJwtResponse(result);
 
-      window.authStoreProvider.store.update({ 
-        name: responsePayload.name, 
-        sub: responsePayload.sub, 
-        given_name: responsePayload.given_name, 
-        family_name: responsePayload.family_name, 
-        email: responsePayload.email,
-        picture: responsePayload.website 
-      }
-    );
-      window.authStoreProvider.saveToken(result);
+      window.authProvider.store.update({ 
+          name: responsePayload.name, 
+          sub: responsePayload.sub, 
+          given_name: responsePayload.given_name, 
+          family_name: responsePayload.family_name, 
+          email: responsePayload.email,
+          picture: responsePayload.website 
+        }
+      );
+
+      window.authProvider.saveToken(result);
       window.location.href = '/login-result';
     }
   });
@@ -45,7 +47,7 @@ window.handleOauthResponse = (response: any) => {
 
 bootstrapApplication(AppComponent, appConfig)
   .then(ref => {
-    window.authStoreProvider = ref.injector.get(AuthStoreProvider);
+    window.authProvider = ref.injector.get(AuthStoreProvider);
     window.dataService = ref.injector.get(DataService);
   })
   .catch((err) => console.error(err));

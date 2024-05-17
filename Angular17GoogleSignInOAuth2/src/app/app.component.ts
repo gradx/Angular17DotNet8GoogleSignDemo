@@ -1,14 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AuthStoreProvider }  from './signal-stores/auth-store';
-import { HeaderComponent } from './views/header/header.component';
 import { DataService } from './services/data.service';
-import { FooterComponent } from './views/footer/footer.component';
-
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FooterComponent, HeaderComponent],
+  imports: [RouterOutlet],
   providers: [AuthStoreProvider, DataService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.less',
