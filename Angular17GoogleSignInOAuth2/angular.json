@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Angular17GoogleSignInOAuth2": {
+    "Angular18SignInDemo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/angular17-google-sign-in-oauth2",
+            "outputPath": "dist/angular18-sign-in",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Angular17GoogleSignInOAuth2:build:production"
+              "buildTarget": "Angular18SignInDemo:build:production"
             },
             "development": {
-              "buildTarget": "Angular17GoogleSignInOAuth2:build:development"
+              "buildTarget": "Angular18SignInDemo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "Angular17GoogleSignInOAuth2:build"
+            "buildTarget": "Angular18SignInDemo:build"
           }
         },
         "test": {

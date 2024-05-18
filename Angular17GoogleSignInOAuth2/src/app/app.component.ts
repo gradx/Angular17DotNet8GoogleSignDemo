@@ -13,6 +13,6 @@ import { DataService } from './services/data.service';
 
 
 export class AppComponent {
-  title = 'Angular17GoogleSignInOAuth2';
+  title = 'Angular18SignInDemo';
   constructor() { }
 }
