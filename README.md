@@ -2,6 +2,6 @@
 
 Complete e2e demo of an integration of the Sign in with Google (for web) with .NET 8.0 Web API
 
-*Designed to be a skeleton project that can help with bootstrap a new application as quickly as possible*
+__Designed to be a skeleton project that can help bootstrap a new application with minimal changes__
 
 ### Configuration Required after Google setup
