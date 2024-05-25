@@ -1,3 +1,5 @@
+Please use the [Angular 18](https://github.com/gradx/angular-18-sign-in-google-demo) repository as this one is no longer maintained
+
 # Angular 17 + Google Identity demo Angular 17
 
 Complete e2e demo of an integration of the Sign in with Google (for web) with .NET 8.0 Web API
